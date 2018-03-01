@@ -501,10 +501,23 @@ function undo()
     showCubeButtons();
     break;
     case "climbAttempt":
-    showClimb2();
+
+    if (numRamps == .5)
+    {
+      showClimbRamps();
+    }
+    else if (numRamps >= 1)
+    {
+      showClimbPostRamps();
+    }
+    else
+    {
+      showClimb2();
+    }
     break;
     case "deployRamps":
     showClimb2();
+    numRamps = 0;
     break;
     case "leaveParked":
     showClimb2();
@@ -520,9 +533,11 @@ function undo()
     break;
     case "oneRamp":
     showClimbRamps();
+    numRamps = .5
     break;
     case "twoRamp":
     showClimbRamps();
+    numRamps = .5
     break;
     case "undoRamp":
     if (lastItem == "deployRamps")
@@ -533,6 +548,7 @@ function undo()
     {
       showClimbPostRamps();
     }
+    numRamps = 1.5
     break;
     case "droppedCube":
     setHtml(droppedCube,textDroppedCube);
