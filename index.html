@@ -2,6 +2,11 @@
 <html>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    img {
+      width:5%;
+    }
+  </style>
 </head>
 <body>
   <img src="beepis.jpg">
@@ -13,7 +18,7 @@
         doThing();
 
         function doThing(){
-          $x.slideToggle(500,doThing);
+          $x.slideToggle(1000,doThing);
           if (state == 1){
             $x.hide();
           }
