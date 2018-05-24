@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <p>Click this </p>
+  <script>
+    $(function(){
+      $("p").click(function(){
+        var $x = $(this);
+        doThing();
+
+        function doThing(){
+          $x.slideToggle(500,doThing);
+          $x.append("Scrungo beepis ")
+        }
+
+      });
+    });
+
+  </script>
+</body>
+</html>
